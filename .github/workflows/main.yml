@@ -1,0 +1,41 @@
+name: Web E2E Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clone do projeto para a máquina
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Conferir a versão instalada do Node
+      - name: Node version
+        run: node --version
+
+      # Instalar dependências do projeto
+      - name: Instalando dependências
+        run: npm install
+
+      # Executar os testes automatizados em modo headless
+      - name: Executando os testes
+        run: npx cypress run --spec "cypress/e2e/automation-exercise.cy.js"
+
+      # Publicar relatórios, screenshots e vídeos como artefatos da execução
+      - name: Upload de Relatórios e Evidências
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: relatorios
+          path: |
+            cypress/reports
+            cypress/screenshots
+            cypress/videos
+

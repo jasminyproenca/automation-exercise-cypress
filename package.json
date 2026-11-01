@@ -1,0 +1,26 @@
+{
+  "name": "automation-exercise-cypress",
+  "version": "1.0.0",
+  "description": "Projeto de conclusão - Automação de Testes Web com Cypress (PGATS)",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "cy:headed": "node -e \"delete process.env.ELECTRON_RUN_AS_NODE; require('child_process').execSync('npx cypress run --headed --browser chrome', {stdio: 'inherit'})\"",
+    "test": "npx cypress run"
+  },
+  "keywords": [
+    "cypress",
+    "automation-exercise",
+    "e2e",
+    "pgats"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "cypress": "13.7.3",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
+}
+
