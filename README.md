@@ -2,7 +2,7 @@
 
 Projeto de automação de testes End-to-End (E2E) para a aplicação [Automation Exercise](https://automationexercise.com/), desenvolvido como trabalho de conclusão da disciplina de **Automação de Testes Web** da Pós-Graduação em Automação de Testes de Software (PGATS).
 
-## 📋 Casos de Teste Implementados
+## Casos de Teste Implementados
 
 Foram automatizados os cenários solicitados da página [Test Cases](https://automationexercise.com/test_cases):
 
@@ -17,7 +17,7 @@ Foram automatizados os cenários solicitados da página [Test Cases](https://aut
 - **Test Case 15:** Place Order: Register before Checkout
 - **Test Case 16:** Place Order: Login before Checkout
 
-## 🏗️ Arquitetura e Boas Práticas Aplicadas
+## Arquitetura e Boas Práticas Aplicadas
 
 - **Modularização e Separação de Responsabilidades:** Divisão das ações em módulos independentes em `cypress/modules/` (`menu`, `login`, `cadastro`, `produtos`, `carrinho`, `subscricao`).
 - **Seletores Estáveis:** Uso prioritário de atributos dedicados (`[data-qa="..."]`) e IDs.
@@ -25,7 +25,7 @@ Foram automatizados os cenários solicitados da página [Test Cases](https://aut
 - **Hooks e Configuração Global:** Uso de `before` / `beforeEach` e `baseUrl` centralizada em `cypress.config.js`.
 - **Relatórios:** Integração com `cypress-mochawesome-reporter` (geração local em `cypress/reports/html/index.html` e upload automático de artefatos no GitHub Actions).
 
-## 🚀 Como Executar Localmente
+## Como Executar Localmente
 
 1. Instale as dependências:
    ```bash
@@ -41,4 +41,3 @@ Foram automatizados os cenários solicitados da página [Test Cases](https://aut
    ```
 4. Após a execução via `cypress run`, abra o relatório HTML gerado em:
    `cypress/reports/html/index.html`
-
